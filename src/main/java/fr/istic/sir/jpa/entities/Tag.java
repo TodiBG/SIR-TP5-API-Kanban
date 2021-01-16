@@ -11,7 +11,7 @@ public class Tag {
     private String libelle ;
     private List<Fiche> fiches = new ArrayList<>();
 
-    public Tag() {}
+    protected Tag() {}
 
     public Tag(String libelle) {
         this.libelle = libelle;

@@ -19,7 +19,7 @@ public class Fiche {
     private String note;
     private Section section ;
 
-    public Fiche() {}
+    protected Fiche() {}
 
     public Fiche(String libelle, Date dateButoire, Utilisateur utilisateur, int temps, String lieu, String url, String note) {
         this.libelle = libelle;
@@ -78,8 +78,11 @@ public class Fiche {
     }
 
     @ManyToMany(mappedBy = "fiches")
-    public List<Tag> getTag() {
+    public List<Tag> getTags() {
         return tags;
+    }
+    public void setTags(List<Tag> tag) {
+        this.tags = tag;
     }
 
     public void addTag(Tag tag){
@@ -93,9 +96,7 @@ public class Fiche {
         }
     }
 
-    public void setTag(List<Tag> tag) {
-        this.tags = tag;
-    }
+
 
     public String getLieu() {
         return lieu;

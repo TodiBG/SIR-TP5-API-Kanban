@@ -15,9 +15,7 @@ public class Section {
     private List<Fiche> fiches ;
     private Tableau tab;
 
-    public Section() {
-        this.libelle = libelle;
-    }
+    protected Section() { }
 
     public Section(String libelle) {
         this.libelle = libelle;

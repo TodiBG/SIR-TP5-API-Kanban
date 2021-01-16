@@ -26,8 +26,8 @@ public class Main {
 
 
 
-       Utilisateur user1 = new Utilisateur("Jean Pierre", "IVABO") ;
-       Utilisateur user2 = new Utilisateur("Angelle CLarissa", "SIB") ;
+       Utilisateur user1 = new Utilisateur("Jean Pierre 3X", "IVABO") ;
+       Utilisateur user2 = new Utilisateur("Angela CLarissa", "SIB") ;
 
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.FRANCE);

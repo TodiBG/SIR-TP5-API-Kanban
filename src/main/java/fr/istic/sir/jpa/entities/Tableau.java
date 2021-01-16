@@ -12,7 +12,7 @@ public class Tableau {
     private List<Section> section;
 
 
-    public Tableau() { }
+    protected Tableau() { }
 
     public Tableau(String libelle) {
         this.libelle = libelle;

@@ -11,7 +11,7 @@ public class Utilisateur {
     private String nom;
     private List<Fiche> fiche;
 
-    public Utilisateur() {  }
+    protected Utilisateur() {  }
 
     public Utilisateur(String prenom, String nom ) {
         this.prenom = prenom;
