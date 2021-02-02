@@ -1,12 +1,13 @@
 package fr.istic.sir.jpa.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Fiche {
+public class Fiche implements Serializable {
 
     private long id;
     private String libelle;

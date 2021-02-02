@@ -1,10 +1,11 @@
 package fr.istic.sir.jpa.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Tableau {
+public class Tableau implements Serializable {
 
     private long id;
     private String libelle ;
