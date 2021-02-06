@@ -1,5 +1,7 @@
 package fr.istic.sir.jpa.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -10,7 +12,7 @@ public class Tableau implements Serializable {
     private long id;
     private String libelle ;
 
-    private List<Section> section;
+    private List<Section> sections;
 
 
     protected Tableau() { }
@@ -37,12 +39,13 @@ public class Tableau implements Serializable {
         this.libelle = libelle;
     }
 
+    @JsonIgnore
     @OneToMany(mappedBy = "tab")
-    public List<Section> getSection() {
-        return section;
+    public List<Section> getSections() {
+        return sections;
     }
 
-    public void setSection(List<Section> section) {
-        this.section = section;
+    public void setSections(List<Section> section) {
+        this.sections = section;
     }
 }

@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Fiche implements Serializable {
+public class Fiche  implements Serializable {
 
     private long id;
     private String libelle;
@@ -61,6 +61,7 @@ public class Fiche implements Serializable {
         this.dateButoire = dateButoire;
     }
 
+
     @ManyToOne
     public Utilisateur getUtilisateur() {
         return utilisateur;
@@ -77,6 +78,7 @@ public class Fiche implements Serializable {
     public void setTemps(int temps) {
         this.temps = temps;
     }
+
 
     @ManyToMany(mappedBy = "fiches")
     public List<Tag> getTags() {

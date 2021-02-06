@@ -1,5 +1,7 @@
 package fr.istic.sir.jpa.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -51,6 +53,7 @@ public class Section implements Serializable {
         this.tab = tab;
     }
 
+    @JsonIgnore
     @OneToMany (mappedBy = "section")
     public List<Fiche> getFiches() {
         return fiches;

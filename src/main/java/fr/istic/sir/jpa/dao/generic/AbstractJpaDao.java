@@ -7,18 +7,13 @@ import java.util.List;
 
 public abstract class AbstractJpaDao<K, T extends Serializable> implements IGenericDao<K, T> {
 
-	private Class<T> clazz;
+	protected Class<T> clazz;
 
 	protected EntityManager entityManager;
 
 	public AbstractJpaDao() {
 		this.entityManager = EntityManagerHelper.getEntityManager();
 	}
-
-	public void setClazz(Class<T> clazzToSet) {
-		this.clazz = clazzToSet;
-	}
-
 
 
 	/**

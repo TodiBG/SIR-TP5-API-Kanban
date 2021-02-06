@@ -1,5 +1,7 @@
 package fr.istic.sir.jpa.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -39,6 +41,7 @@ public class Tag implements Serializable {
         this.libelle = libelle;
     }
 
+    @JsonIgnore
     @ManyToMany
     public List<Fiche> getFiches() {
         return fiches;

@@ -56,9 +56,6 @@
 
      //Enregistrer dans la base de données
          ficheDao.create(fiche1) ;
-
-
-
        ficheDao.create(fiche2) ;
         ficheDao.create(fiche3) ;
         ficheDao.create(fiche4) ;
