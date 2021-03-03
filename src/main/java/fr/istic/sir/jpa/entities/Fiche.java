@@ -12,7 +12,7 @@ public class Fiche  implements Serializable {
     private long id;
     private String libelle;
     private Date dateButoire;
-    private Utilisateur utilisateur;
+    private User user;
     private int temps;
     private List <Tag> tags  = new ArrayList<>();
     private String lieu;
@@ -20,12 +20,23 @@ public class Fiche  implements Serializable {
     private String note;
     private Section section ;
 
+    /** un constructeur vide ayant une visibité protected ou public est neceesaire pour Hibernate **/
     protected Fiche() {}
 
-    public Fiche(String libelle, Date dateButoire, Utilisateur utilisateur, int temps, String lieu, String url, String note) {
+    /**
+     * Le constructeur principal
+     * @param libelle le libelé de la fiche
+     * @param dateButoire, la date bitoire
+     * @param user, l'utilisateur de la fiche ( un collaboratoire )
+     * @param temps , temps
+     * @param lieu
+     * @param url
+     * @param note, Une note explicative sur la fiche. c'est different de Tag
+     */
+    public Fiche(String libelle, Date dateButoire, User user, int temps, String lieu, String url, String note) {
         this.libelle = libelle;
         this.dateButoire = dateButoire;
-        this.utilisateur = utilisateur;
+        this.user = user;
         this.temps = temps;
         this.lieu = lieu;
         this.url = url;
@@ -63,12 +74,12 @@ public class Fiche  implements Serializable {
 
 
     @ManyToOne
-    public Utilisateur getUtilisateur() {
-        return utilisateur;
+    public User getUtilisateur() {
+        return user;
     }
 
-    public void setUtilisateur(Utilisateur utilisateur) {
-        this.utilisateur = utilisateur;
+    public void setUtilisateur(User user) {
+        this.user = user;
     }
 
     public int getTemps() {
@@ -80,22 +91,28 @@ public class Fiche  implements Serializable {
     }
 
 
-    @ManyToMany(mappedBy = "fiches")
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE} )
     public List<Tag> getTags() {
         return tags;
     }
+
     public void setTags(List<Tag> tag) {
         this.tags = tag;
     }
 
     public void addTag(Tag tag){
-        this.tags.add(tag) ;
+        //On ne veut pas de doublon dans cette liste
+        if( ! this.tags.contains(tag)) {
+            this.tags.add(tag) ;
+        }
+
     }
 
     public void removeTag(Tag tag){
-
         if( this.tags.contains(tag)) {
             this.tags.remove(tag);
+            //Assurer la coherence des données
+            tag.getFiches().remove(this);
         }
     }
 

@@ -5,6 +5,11 @@ import javax.persistence.EntityTransaction;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * DAO ne
+ * @param <K>
+ * @param <T>
+ */
 public abstract class AbstractJpaDao<K, T extends Serializable> implements IGenericDao<K, T> {
 
 	protected Class<T> clazz;

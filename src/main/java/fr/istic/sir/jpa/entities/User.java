@@ -7,16 +7,16 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Utilisateur implements Serializable {
+public class User implements Serializable {
 
     private String email;
     private String prenom ;
     private String nom;
     private List<Fiche> fiches;
 
-    protected Utilisateur() {  }
+    protected User() {  }
 
-    public Utilisateur(String prenom, String nom , String email) {
+    public User(String prenom, String nom , String email) {
         this.prenom = prenom;
         this.nom = nom;
         this.email = email ;

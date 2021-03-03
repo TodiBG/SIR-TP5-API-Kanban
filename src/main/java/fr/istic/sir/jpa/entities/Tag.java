@@ -14,8 +14,13 @@ public class Tag implements Serializable {
     private String libelle ;
     private List<Fiche> fiches = new ArrayList<>();
 
+    /** un constructeur vide ayant une visibité protected ou public est neceesaire pour Hibernate **/
     protected Tag() {}
 
+    /**
+     * Le constructeur principal
+     * @param libelle , le libelé du Tag
+     */
     public Tag(String libelle) {
         this.libelle = libelle;
     }
@@ -30,9 +35,6 @@ public class Tag implements Serializable {
         this.id = id;
     }
 
-
-
-
     public String getLibelle() {
         return libelle;
     }
@@ -42,7 +44,7 @@ public class Tag implements Serializable {
     }
 
     @JsonIgnore
-    @ManyToMany
+    @ManyToMany(mappedBy = "tags")
     public List<Fiche> getFiches() {
         return fiches;
     }
@@ -52,13 +54,17 @@ public class Tag implements Serializable {
     }
 
     public void addFiche(Fiche fiche){
-        this.fiches.add(fiche) ;
+        //On ne veut pas de doublons dans la liste
+        if(  !this.fiches.contains(fiche)) {
+            this.fiches.add(fiche);
+        }
     }
 
     public void removeFiche(Fiche fiche){
 
         if( this.fiches.contains(fiche)) {
             this.fiches.remove(fiche);
+            fiche.getTags().remove(this);
         }
     }
 }

@@ -1,9 +1,9 @@
 package fr.istic.sir.rest;
 
 
-import fr.istic.sir.jpa.dao.UtilisateurDao;
+import fr.istic.sir.jpa.dao.UserDao;
 import fr.istic.sir.jpa.entities.Fiche;
-import fr.istic.sir.jpa.entities.Utilisateur;
+import fr.istic.sir.jpa.entities.User;
 import io.swagger.v3.oas.annotations.Parameter;
 
 import javax.ws.rs.*;
@@ -18,16 +18,16 @@ public class UserResource {
   @GET
   @Path("/")
   @Produces({"application/json"})
-  public List<Utilisateur> getAllUsers()  {
-    List<Utilisateur> list =  new UtilisateurDao().findAll() ;
+  public List<User> getAllUsers()  {
+    List<User> list =  new UserDao().findAll() ;
     return list;
   }
 
   @GET
   @Path("/{userId}")
   @Produces({"application/json"})
-  public Utilisateur getUserById(@PathParam("userId") String userId)  {
-      return new UtilisateurDao().findById(userId) ;
+  public User getUserById(@PathParam("userId") String userId)  {
+      return new UserDao().findById(userId) ;
   }
 
   @GET
@@ -35,7 +35,7 @@ public class UserResource {
   @Produces({"application/json"})
   public List<Fiche> getUserFicheCollection(@PathParam("userId") String userId)  {
 
-    Utilisateur  user = new UtilisateurDao().findById(userId);
+    User user = new UserDao().findById(userId);
     if ( user != null ) {
       return user.getFiches();
     }
@@ -47,10 +47,10 @@ public class UserResource {
   @POST
   @Path("/create")
   @Consumes("application/json")
-  public Response create( @Parameter(description = "Pet object that needs to be added to the store", required = true) Utilisateur user) {
+  public User create( @Parameter(description = "Pet object that needs to be added to the store", required = true) User user) {
     // add pet
-    new UtilisateurDao().create(user) ;
-    return Response.ok().entity("SUCCESS").build();
+    new UserDao().create(user) ;
+    return user; //Response.ok().entity("SUCCESS").build();
   }
 
 
