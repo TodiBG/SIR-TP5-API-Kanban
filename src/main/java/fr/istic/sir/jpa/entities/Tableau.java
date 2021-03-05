@@ -12,7 +12,7 @@ public class Tableau implements Serializable {
     private long id;
     private String libelle ;
 
-    private List<Section> sections;
+    private List<Fiche> fiches;
 
 
     protected Tableau() { }
@@ -41,11 +41,11 @@ public class Tableau implements Serializable {
 
     @JsonIgnore
     @OneToMany(mappedBy = "tab")
-    public List<Section> getSections() {
-        return sections;
+    public List<Fiche> getFiches() {
+        return fiches;
     }
 
-    public void setSections(List<Section> section) {
-        this.sections = section;
+    public void setFiches(List<Fiche> fiches) {
+        this.fiches = fiches;
     }
 }

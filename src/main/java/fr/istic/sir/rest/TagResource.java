@@ -47,11 +47,34 @@ public class TagResource {
   @POST
   @Path("/create")
   @Consumes("application/json")
-  public Response create( @Parameter(description = "Pet object that needs to be added to the store", required = true) Tag Tag) {
+  public Tag create( @Parameter(description = "Tag object that needs to be added to the store", required = true) Tag tag) {
     // add pet
-    new TagDao().create(Tag) ;
-    return Response.ok().entity("SUCCESS").build();
+    new TagDao().create(tag) ;
+    return tag;
   }
+
+  @PUT
+  @Path("/update")
+  @Consumes("application/json")
+  public Tag update( @Parameter(description = "Tag object that needs to be updated to the store", required = true) Tag tag) {
+    // add pet
+    new TagDao().update(tag) ;
+    return tag;
+  }
+
+
+
+  @DELETE
+  @Path("/delete/{Id}")
+  @Produces({"application/json"})
+  public Response delete(@PathParam("Id") long Id)  {
+    new TagDao().deleteById(Id);
+
+    return Response.ok().entity("SUCCESS").build();
+
+  }
+
+
 
 
 }

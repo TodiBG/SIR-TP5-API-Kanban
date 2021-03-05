@@ -16,8 +16,7 @@
  */
 package fr.istic.sir;
 
-import fr.istic.sir.rest.FicheResource;
-import fr.istic.sir.rest.UserResource;
+import fr.istic.sir.rest.*;
 import io.swagger.v3.jaxrs2.integration.resources.OpenApiResource;
 
 import javax.ws.rs.core.Application;
@@ -34,8 +33,9 @@ public class API_Application extends Application {
 
         clazzes.add(UserResource.class);
         clazzes.add(FicheResource.class);
-
-
+        clazzes.add(SectionResource.class);
+        clazzes.add(TableauResource.class);
+        clazzes.add(TagResource.class);
 
         clazzes.add(OpenApiResource.class);
         return clazzes;

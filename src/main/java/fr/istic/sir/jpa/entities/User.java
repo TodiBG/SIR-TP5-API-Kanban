@@ -51,7 +51,7 @@ public class User implements Serializable {
     }
 
     @JsonIgnore
-    @OneToMany(mappedBy = "utilisateur", fetch=FetchType.LAZY)
+    @OneToMany(mappedBy = "user", fetch=FetchType.LAZY)
     public List<Fiche> getFiches() {
         return fiches;
     }

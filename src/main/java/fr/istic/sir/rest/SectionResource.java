@@ -47,10 +47,29 @@ public class SectionResource {
   @POST
   @Path("/create")
   @Consumes("application/json")
-  public Response create( @Parameter(description = "Pet object that needs to be added to the store", required = true) Section Section) {
-    // add pet
-    new SectionDao().create(Section) ;
+  public Section create( @Parameter(description = "Section object that needs to be added to the store", required = true) Section section) {
+    new SectionDao().create(section) ;
+    return section;
+  }
+
+
+  @PUT
+  @Path("/update")
+  @Consumes("application/json")
+  public Section update( @Parameter(description = "Section object that needs to be updated to the store", required = true) Section section) {
+    new SectionDao().update(section) ;
+    return section;
+  }
+
+
+  @DELETE
+  @Path("/delete/{Id}")
+  @Produces({"application/json"})
+  public Response delete(@PathParam("Id") long Id)  {
+    new SectionDao().deleteById(Id);
+
     return Response.ok().entity("SUCCESS").build();
+
   }
 
 

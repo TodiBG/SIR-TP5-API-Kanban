@@ -1,5 +1,11 @@
-       //Créer les DAO
-        UtilisateurDao userDAO = new  UtilisateurDao() ;
+
+
+
+
+
+
+        //Créer les DAO
+        UserDao userDAO = new UserDao() ;
         FicheDao ficheDao = new FicheDao() ;
         SectionDao sectionDao = new SectionDao() ;
         TagDao tagDao = new TagDao() ;
@@ -8,8 +14,8 @@
 
 
 
-       Utilisateur user1 = new Utilisateur("Josparo Jos", "Siesson") ;
-       Utilisateur user2 = new Utilisateur("Samuel ", "JOB") ;
+        User user1 = new User("Josparo Jos", "Siesson", "siesson.josp@toLab.ci") ;
+        User user2 = new User("Samuel ", "JOB","") ;
 
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.FRANCE);
@@ -21,8 +27,8 @@
         //userDAO.create(user2) ;
 
 
-     userDAO.create(user1) ;
-     userDAO.create(user2) ;
+        userDAO.create(user1) ;
+        userDAO.create(user2) ;
 
 
         //Créer des fiches
@@ -51,12 +57,12 @@
         tagDao.update(urgent) ;
         tagDao.update(moins_urgent) ;
 
-     System.out.println("User : "+ fiche3.getUtilisateur().getId());
+        System.out.println("User : "+ fiche3.getUser().getEmail());
 
 
-     //Enregistrer dans la base de données
-         ficheDao.create(fiche1) ;
-       ficheDao.create(fiche2) ;
+        //Enregistrer dans la base de données
+        ficheDao.create(fiche1) ;
+        ficheDao.create(fiche2) ;
         ficheDao.create(fiche3) ;
         ficheDao.create(fiche4) ;
 
@@ -77,25 +83,27 @@
         fiche4.setSection(realise);
 
 
-
-        //Mettre les objets fiche à jour
-        ficheDao.update(fiche1) ;
-        ficheDao.update(fiche2) ;
-        ficheDao.update(fiche3) ;
-        ficheDao.update(fiche4) ;
-
-
         //Créer un nouveau tableau
         Tableau tab = new Tableau("Secondaire") ;
 
         //Enregister le tableau dans la base de données
         tableauDao.create(tab);
 
-        //Mettre les sections dans le tableau
-        en_attente.setTab(tab);
-        en_cours.setTab(tab);
-        realise.setTab(tab);
 
-        sectionDao.update(en_attente) ;
-        sectionDao.update(en_cours) ;
-        sectionDao.update(realise) ;
+        //Mettre les sections dans les fiches
+        fiche1.setTab(tab);
+        fiche2.setTab(tab);
+        fiche3.setTab(tab);
+        fiche4.setTab(tab);
+
+        //Mettre les sections dans les fiches
+        fiche1.setSection(en_attente);
+        fiche1.setSection(en_cours);
+        fiche1.setSection(realise);
+        fiche1.setSection(realise);
+
+        //Mettre les objets fiche à jour
+        ficheDao.update(fiche1) ;
+        ficheDao.update(fiche2) ;
+        ficheDao.update(fiche3) ;
+        ficheDao.update(fiche4) ;

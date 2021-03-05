@@ -47,17 +47,32 @@ public class UserResource {
   @POST
   @Path("/create")
   @Consumes("application/json")
-  public User create( @Parameter(description = "Pet object that needs to be added to the store", required = true) User user) {
+  public User create( @Parameter(description = "User object that needs to be added to the store", required = true) User user) {
     // add pet
     new UserDao().create(user) ;
     return user; //Response.ok().entity("SUCCESS").build();
   }
 
+  @POST
+  @Path("/update")
+  @Consumes("application/json")
+  public User update( @Parameter(description = "User object that needs to be updated to the store", required = true) User user) {
+    // add pet
+    new UserDao().update(user) ;
+    return user; //Response.ok().entity("SUCCESS").build();
+  }
 
 
 
+  @PUT
+  @Path("/delete/{email}")
+  @Produces({"application/json"})
+  public Response delete(@PathParam("email") String email)  {
+    new UserDao().deleteById(email);
 
+    return Response.ok().entity("SUCCESS").build();
 
+  }
 
 
 

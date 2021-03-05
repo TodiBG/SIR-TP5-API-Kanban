@@ -6,9 +6,9 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * DAO ne
- * @param <K>
- * @param <T>
+ * AbstractJpaDao (DAO générique) contient les methode géneriques, inchangeables et necessaire dans classe classe DAO.
+ * @param <K>, est le type (String ou Long) de l'identifiant d'une instance de la classe.
+ * @param <T>, est le nom de la classe fille qui etend la classe abstract AbstractJpaDao
  */
 public abstract class AbstractJpaDao<K, T extends Serializable> implements IGenericDao<K, T> {
 

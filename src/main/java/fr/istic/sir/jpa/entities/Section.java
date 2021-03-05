@@ -44,15 +44,6 @@ public class Section implements Serializable {
     }
 
 
-    @ManyToOne
-    public Tableau getTab() {
-        return tab;
-    }
-
-    public void setTab(Tableau tab) {
-        this.tab = tab;
-    }
-
     @JsonIgnore
     @OneToMany (mappedBy = "section")
     public List<Fiche> getFiches() {

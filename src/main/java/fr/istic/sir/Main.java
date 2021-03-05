@@ -28,6 +28,7 @@ public class Main {
 
         logger.info("JAX-RS based micro-service running!");
 
+
     }
 
 }
