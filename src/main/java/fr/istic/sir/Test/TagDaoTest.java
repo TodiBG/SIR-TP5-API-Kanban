@@ -19,7 +19,6 @@ public class TagDaoTest {
 
     TagDao tagDao;
     FicheDao ficheDao;
-    UserDao userDao;
     @BeforeEach
     void init(){
         tagDao = new TagDao();
