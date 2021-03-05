@@ -1,7 +1,6 @@
 package fr.istic.sir.Test;
 
 import fr.istic.sir.jpa.dao.UserDao;
-import fr.istic.sir.jpa.entities.Fiche;
 import fr.istic.sir.jpa.entities.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,7 +23,7 @@ public class UserDaoTest {
     void getUserById(){
 
         //We are sure there is an user in the database who owns this email
-        String email = "bonaventure.gbehe@gmail.com";
+        String email = "bonaventure.gbehe@gmail.com" ;
 
         //We are going to retrieve this user
         User user = userDao.findById(email);
@@ -35,13 +34,13 @@ public class UserDaoTest {
     }
     @Test
     @DisplayName("Test retrieve all users ")
-    void getAllFiche(){
+    void getAllUsers(){
 
         //We retrieve this fiche
         List<User>Users  = userDao.findAll();
 
         //We test the id match
-        Assertions.assertNotNull(Users,"il y a des fiches dans la BD");
+        Assertions.assertNotNull(Users," There are sommes users in the BD");
 
     }
 
