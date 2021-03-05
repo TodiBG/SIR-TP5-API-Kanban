@@ -17,7 +17,7 @@ public class Tableau implements Serializable {
 
     protected Tableau() { }
 
-    public Tableau(String libelle) {
+    public Tableau(String libelle ) {
         this.libelle = libelle;
     }
 

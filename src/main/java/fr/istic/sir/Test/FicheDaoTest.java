@@ -27,7 +27,7 @@ public class FicheDaoTest {
     @DisplayName("Test retrieve a fiche by his id")
     void getFicheById(){
         //We are sure that in our database there is a fiche with this id
-        long id = 2;
+        long id = 3;
 
         //We retrieve this fiche
         Fiche fiche = ficheDao.findById(id);
@@ -95,19 +95,12 @@ public class FicheDaoTest {
     @Test
     @DisplayName("Test delete methode ")
     void deleteFiche(){
-        //instantiation of a new fiche
-        User user4 = new User("Sam", "Gatoni", "Sam.gatoni@gmail.com") ;
-        userDao.create(user4);
-        Date date = new Date();
 
-        //We instanciate a new fiche
-        Fiche fiche = new Fiche("Production du septieme lot",date,user4,45,"Villejean","http://localhost/phpmyadmin/sql.php?server=1&db=kanban&table=Fiche","frontend");
+        long id = 15;
 
-        // We register this new fiche in the database
-        ficheDao.create(fiche);
+        Fiche fiche = ficheDao.findById(id);
 
-
-        //deleting this new fiche
+        //deleting this fiche we've retrieved
 
         ficheDao.delete(fiche);
 
@@ -120,20 +113,13 @@ public class FicheDaoTest {
     @Test
     @DisplayName("Test delete methode ")
     void deleteFicheById(){
-        //instantiation of a new fiche
-        User user5 = new User("Samuela", "Diouf", "Samuela.diouf@gmail.com") ;
-        userDao.create(user5);
-        Date date = new Date();
 
-        //We instanciate a new fiche
-        Fiche fiche = new Fiche("Production du huitieme lot",date,user5,45,"Villejean","http://localhost/phpmyadmin/sql.php?server=1&db=kanban&table=Fiche","frontend");
+        //Make sure that this  Id exists in the database, otherwise the test will faill
+        long id = 21;
 
-        // We register this new fiche in the database
-        ficheDao.create(fiche);
+        Fiche fiche = ficheDao.findById(id);
 
-
-        //deleting this new fiche
-
+        //deleting this fiche we've retrieved
         ficheDao.deleteById(fiche.getId());
 
         Fiche fiche1 = ficheDao.findById(fiche.getId());

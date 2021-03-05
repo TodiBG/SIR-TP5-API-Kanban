@@ -59,8 +59,6 @@ public class UserDaoTest {
         //We retrieve the registration of this new user
         User user2 = userDao.findById(email);
 
-        User user3 = userDao.findById("gbehe@gmail.com");
-
         //We test the users match
         Assertions.assertEquals(user2, user1);
 
@@ -87,14 +85,11 @@ public class UserDaoTest {
     @Test
     @DisplayName("Test delete methode ")
     void deleteUser(){
-        String email = "moussa@gmail.com";
+        String email = "Sam.gatoni@gmail.com";
         //instantiation of a new user
-        User user = new User("Moussa ", "Bamba", email) ;
+        User user = userDao.findById(email);
 
-        //registration in database
-        userDao.create(user);
-
-        //deleting this new user
+        //deleting this user
 
         userDao.delete(user);
 
@@ -107,21 +102,18 @@ public class UserDaoTest {
     @Test
     @DisplayName("Test deleteUserById methode ")
     void deleteUserById(){
-        String email = "gretta@gmail.com";
+        String email = "nella.gatoni@gmail.com";
         //instantiation of a new user
-        User user = new User("Gretta ", "Keza", email) ;
+        User user = userDao.findById(email);
 
-        //registration in database
-        userDao.create(user);
+        //deleting this user
 
-        //deleting this new user
+        userDao.deleteById(user.getEmail());
 
-        userDao.deleteById(email);
-
-        User user2 = userDao.findById(email);
+        User user2 = userDao.findById(user.getEmail());
 
         //we test if the object is null
-        Assertions.assertNull(user2,"il n'y a pas cet utilisateur dans la BD ");
+        Assertions.assertNull(user2);
 
     }
 

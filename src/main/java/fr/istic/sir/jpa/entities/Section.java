@@ -20,8 +20,11 @@ public class Section implements Serializable {
 
     protected Section() { }
 
-    public Section(String libelle) {
+    public Section(String libelle, List<Fiche> fiches ,Tableau tab ) {
         this.libelle = libelle;
+        this.fiches = fiches;
+        this.tab = tab;
+
     }
 
     @Id

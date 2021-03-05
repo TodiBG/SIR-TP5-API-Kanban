@@ -48,7 +48,6 @@ public class UserResource {
   @Path("/create")
   @Consumes("application/json")
   public User create( @Parameter(description = "User object that needs to be added to the store", required = true) User user) {
-    // add pet
     new UserDao().create(user) ;
     return user; //Response.ok().entity("SUCCESS").build();
   }
@@ -57,7 +56,6 @@ public class UserResource {
   @Path("/update")
   @Consumes("application/json")
   public User update( @Parameter(description = "User object that needs to be updated to the store", required = true) User user) {
-    // add pet
     new UserDao().update(user) ;
     return user; //Response.ok().entity("SUCCESS").build();
   }

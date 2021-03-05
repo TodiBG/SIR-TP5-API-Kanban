@@ -25,17 +25,17 @@ import java.util.Set;
 
 public class API_Application extends Application {
 
-
     @Override
     public Set<Class<?>> getClasses() {
 
         final Set<Class<?>> clazzes = new HashSet<Class<?>>();
 
-        clazzes.add(UserResource.class);
-        clazzes.add(FicheResource.class);
+        clazzes.add(UserResource.class) ;
+        clazzes.add(FicheResource.class) ;
+        clazzes.add(TagResource.class)  ;
+        clazzes.add(TableauResource.class) ;
         clazzes.add(SectionResource.class);
-        clazzes.add(TableauResource.class);
-        clazzes.add(TagResource.class);
+
 
         clazzes.add(OpenApiResource.class);
         return clazzes;

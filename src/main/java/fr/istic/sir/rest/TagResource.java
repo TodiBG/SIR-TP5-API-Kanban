@@ -1,6 +1,5 @@
 package fr.istic.sir.rest;
 
-
 import fr.istic.sir.jpa.dao.TagDao;
 import fr.istic.sir.jpa.entities.Fiche;
 import fr.istic.sir.jpa.entities.Tag;
@@ -48,7 +47,6 @@ public class TagResource {
   @Path("/create")
   @Consumes("application/json")
   public Tag create( @Parameter(description = "Tag object that needs to be added to the store", required = true) Tag tag) {
-    // add pet
     new TagDao().create(tag) ;
     return tag;
   }
@@ -57,7 +55,6 @@ public class TagResource {
   @Path("/update")
   @Consumes("application/json")
   public Tag update( @Parameter(description = "Tag object that needs to be updated to the store", required = true) Tag tag) {
-    // add pet
     new TagDao().update(tag) ;
     return tag;
   }
@@ -69,12 +66,8 @@ public class TagResource {
   @Produces({"application/json"})
   public Response delete(@PathParam("Id") long Id)  {
     new TagDao().deleteById(Id);
-
     return Response.ok().entity("SUCCESS").build();
-
   }
-
-
 
 
 }
