@@ -59,8 +59,6 @@ public class UserDaoTest {
         //We retrieve the registration of this new user
         User user2 = userDao.findById(email);
 
-        User user3 = userDao.findById("gbehe@gmail.com");
-
         //We test the users match
         Assertions.assertEquals(user2, user1);
 
