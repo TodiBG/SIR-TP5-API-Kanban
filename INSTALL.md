@@ -22,6 +22,7 @@ Then get the project with the HTTPS link :
 - After Open the Project panel (on the left)
 - And Right click on the "Main.java" file and click on "Run"
 
+
 Authors
 
-Bonaventure Gbehe, Ange SIBOMANA
+Bonaventure GBEHE, Ange SIBOMANA
