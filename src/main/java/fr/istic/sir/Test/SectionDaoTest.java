@@ -123,7 +123,6 @@ public class SectionDaoTest {
         Section section = sectionDao.findById(id);
 
         //deleting this section we've retrieved
-
         sectionDao.deleteById(section.getId());
 
         Section section1 = sectionDao.findById(section.getId());
