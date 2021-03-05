@@ -21,8 +21,9 @@ public class Tag implements Serializable {
      * Le constructeur principal
      * @param libelle , le libelé du Tag
      */
-    public Tag(String libelle) {
+    public Tag(String libelle,List<Fiche> fiches) {
         this.libelle = libelle;
+        this.fiches = fiches;
     }
 
     @Id
