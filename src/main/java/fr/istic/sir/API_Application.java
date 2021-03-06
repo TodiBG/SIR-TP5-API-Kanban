@@ -28,17 +28,22 @@ public class API_Application extends Application {
     @Override
     public Set<Class<?>> getClasses() {
 
-        final Set<Class<?>> clazzes = new HashSet<Class<?>>();
+        final Set<Class<?>> resources = new HashSet<Class<?>>();
 
-        clazzes.add(UserResource.class) ;
-        clazzes.add(FicheResource.class) ;
-        clazzes.add(TagResource.class)  ;
-        clazzes.add(TableauResource.class) ;
-        clazzes.add(SectionResource.class);
+        // SWAGGER endpoints
+        resources.add(OpenApiResource.class);
+
+        //Our own resources.
+        resources.add(SwaggerResource.class) ;
+        resources.add(UserResource.class) ;
+        resources.add(FicheResource.class) ;
+        resources.add(TagResource.class)  ;
+        resources.add(TableauResource.class) ;
+        resources.add(SectionResource.class);
 
 
-        clazzes.add(OpenApiResource.class);
-        return clazzes;
+        resources.add(OpenApiResource.class);
+        return resources;
     }
 
 }
