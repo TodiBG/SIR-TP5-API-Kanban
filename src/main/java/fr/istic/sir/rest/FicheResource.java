@@ -13,7 +13,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,14 +34,13 @@ public class FicheResource {
                   )}
           )
   public List<Fiche> getAllfiches()  { return new FicheDao().findAll()  ; }
-  
-  
+
 
   @GET
   @Path("/{ficheId}")
   @Produces({"application/json"})
   @Operation(
-          summary = "To retrieve by its Id",
+          summary = "To retrieve a fiche by its Id",
           description = " ",
           responses = {
                   @ApiResponse(description = "The response contains the found Fiche using its Id",
@@ -60,9 +58,9 @@ public class FicheResource {
   @Produces({"application/json"})
   @Operation(
           summary = "To retrieve all the tags of a Fiche",
-          description = " Passe the Fiche'Id in path parameter",
+          //description = " Passe the Fiche'Id in path parameter",
           responses = {
-                  @ApiResponse(description = "The response contains the found Fiche using its Id",
+                  @ApiResponse(description = "The response contains all Tags contained in the Fiche which Id is passed in path parameter",
                           content = @Content(
                                   mediaType = "application/json",
                                   array = @ArraySchema(schema = @Schema(implementation = Fiche.class))
@@ -86,13 +84,13 @@ public class FicheResource {
           summary = "To create a new fiche",
           description = " ",
           responses = {
-                  @ApiResponse(description = "The response contains the found Fiche using its Id",
+                  @ApiResponse(description = "The response contains the new Fiche created.  its Id is defined",
                           content = @Content(
                                   mediaType = "application/json" ,
                                   schema = @Schema(implementation = Fiche.class))
                   )}
   )
-  public Fiche create(@PathParam("tagId")long tagId ,  @Parameter(description = "New fiche to create", required = true) Fiche fiche)  {
+  public Fiche create( @Parameter(description = "New fiche to be created", required = true) Fiche fiche)  {
     FicheDao ficheDao = new FicheDao() ;
 
     List<Tag> tags = fiche.getTags() ;
@@ -111,6 +109,16 @@ public class FicheResource {
   @PUT
   @Path("/update/{ficheId}")
   @Consumes("application/json")
+  @Operation(
+          summary = "To update a Fiche",
+          //description = " Passe the Fiche'Id in path parameter",
+          responses = {
+                  @ApiResponse(description = "The response contains the updated Fiche, the updated version",
+                          content = @Content(
+                                  mediaType = "application/json" ,
+                                  schema = @Schema(implementation = Fiche.class))
+                  )}
+  )
   public Fiche update(@PathParam("ficheId")long ficheId ,  @Parameter(description = "Fiche to be updated", required = true) Fiche fiche)  {
     if( fiche.getId() == ficheId ) {
       FicheDao ficheDao = new FicheDao();
@@ -122,7 +130,12 @@ public class FicheResource {
 
   @DELETE
   @Path("/delete/{ficheId}")
-  @Produces({"application/json"})
+  @Operation(
+          summary = "To delete a fiche",
+          description = " ",
+          responses = {
+                  @ApiResponse(description = "")}
+  )
   public Response delete(@PathParam("ficheId") long Id)  {
      new FicheDao().deleteById(Id);
 
