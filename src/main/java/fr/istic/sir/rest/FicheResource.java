@@ -57,7 +57,7 @@ public class FicheResource {
   @Path("/{ficheId}/tags")
   @Produces({"application/json"})
   @Operation(
-          summary = "To retrieve all the tags of a Fiche",
+          summary = "To retrieve all the tags of the Fiche which Id is passed in path parameter",
           //description = " Passe the Fiche'Id in path parameter",
           responses = {
                   @ApiResponse(description = "The response contains all Tags contained in the Fiche which Id is passed in path parameter",
@@ -90,7 +90,7 @@ public class FicheResource {
                                   schema = @Schema(implementation = Fiche.class))
                   )}
   )
-  public Fiche create( @Parameter(description = "New fiche to be created", required = true) Fiche fiche)  {
+  public Fiche create( @Parameter(description = "The new fiche to be created", required = true) Fiche fiche)  {
     FicheDao ficheDao = new FicheDao() ;
 
     List<Tag> tags = fiche.getTags() ;
@@ -119,7 +119,7 @@ public class FicheResource {
                                   schema = @Schema(implementation = Fiche.class))
                   )}
   )
-  public Fiche update(@PathParam("ficheId")long ficheId ,  @Parameter(description = "Fiche to be updated", required = true) Fiche fiche)  {
+  public Fiche update(@PathParam("ficheId")long ficheId ,  @Parameter(description = "The Fiche to be updated", required = true) Fiche fiche)  {
     if( fiche.getId() == ficheId ) {
       FicheDao ficheDao = new FicheDao();
 
