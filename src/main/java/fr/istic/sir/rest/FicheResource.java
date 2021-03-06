@@ -110,7 +110,7 @@ public class FicheResource {
   @Path("/update/{ficheId}")
   @Consumes("application/json")
   @Operation(
-          summary = "To update a Fiche",
+          summary = "To update the Fiche which Id is passed in path parameter",
           //description = " Passe the Fiche'Id in path parameter",
           responses = {
                   @ApiResponse(description = "The response contains the updated Fiche, the updated version",
@@ -131,7 +131,7 @@ public class FicheResource {
   @DELETE
   @Path("/delete/{ficheId}")
   @Operation(
-          summary = "To delete a fiche",
+          summary = "To delete the fiche which Id is passed in path parameter",
           description = " ",
           responses = {
                   @ApiResponse(description = "")}

@@ -59,7 +59,7 @@ public class SectionResource {
   @Path("/{SectionId}/fiches")
   @Produces({"application/json"})
   @Operation(
-          summary = "To retrieve all the Fiches of a Section",
+          summary = "To retrieve all the Fiches of the Section which Id is passed in path parameter",
           //description = " Passe the Section's Id in path parameter",
           responses = {
                   @ApiResponse(description = "The response contains all Fiche contained in the Section which Id is passed in path parameter",
@@ -103,7 +103,7 @@ public class SectionResource {
   @Path("/update/{sectionId}")
   @Consumes("application/json")
   @Operation(
-          summary = "To update a Fiche",
+          summary = "To update the Section which Id is passed in path parameter",
           //description = " Passe the Section'Id in path parameter",
           responses = {
                   @ApiResponse(description = "The response contains the updated Section, the updated version",
@@ -112,7 +112,7 @@ public class SectionResource {
                                   schema = @Schema(implementation = Section.class))
                   )}
   )
-  public Section update(@PathParam("ficheId")long sectionId , @Parameter(description = "Section object that needs to be updated to the store", required = true) Section section) {
+  public Section update(@PathParam("ficheId")long sectionId , @Parameter(description = "The Section to be updated", required = true) Section section) {
     if( section.getId() == sectionId ) {
       new SectionDao().update(section) ;
     }
@@ -124,7 +124,7 @@ public class SectionResource {
   @Path("/delete/{Id}")
   @Produces({"application/json"})
   @Operation(
-          summary = "To delete a Section",
+          summary = "To delete the Section which Id is passed in path parameter",
           //description = "Passe the Section'Id in path parameter ",
           responses = {
                   @ApiResponse(description = "")}

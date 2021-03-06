@@ -61,7 +61,6 @@ public class TableauResource {
   @Produces({"application/json"})
   @Operation(
           summary = "To retrieve all the Fiches of the Tableau which Id is passed in path parameter",
-          //description = " Passe the Section's Id in path parameter",
           responses = {
                   @ApiResponse(description = "The response contains all Fiche contained in the Tableau which Id is passed in path parameter",
                           content = @Content(

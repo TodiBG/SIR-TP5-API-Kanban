@@ -18,8 +18,6 @@ import javax.ws.rs.PathParam;
 @Path("/docs")
 public class SwaggerResource {
 
-    private static final Logger logger = Logger.getLogger(SwaggerResource.class.getName());
-
     @GET
     @Operation(summary = "The documentation for this API" )
     public byte[] documentation() {
