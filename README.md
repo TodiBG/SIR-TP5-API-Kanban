@@ -1,19 +1,19 @@
 # SIR-TP5-API-Kanban
 TP2-4 et TP5, Systèmes d'information répartis. <br/> <br/>
 
-###AUTORS
+##### AUTORS
   * [Bonaventure Gbehe](https://github.com/TodiBG)
   * [Ange Sibomana](https://github.com/angecla)
 <br/> 
-    
-##Table of contents
+
+### Table of contents
 1. [About](##ABOUT)
 2. [Tools](##TOOLS)
 3. [Technologies](##TECHNOLOGIES)
 4. [Install](##INSTALL)
 5. [Get started](##GET STARTED)
 
-##ABOUT
+### ABOUT
 ***
 This application is an API developed during TP2-4 and TP5 of the distributed information system lab.
 
@@ -30,7 +30,7 @@ This application is an API developed during TP2-4 and TP5 of the distributed inf
     * Set up API documentation using OpenAPI and Swagger UI. 
 
 
-##TOOLS
+### TOOLS
 ***
  * IDE: 
     * <b>IntelliJ IDEA<b>
@@ -48,7 +48,7 @@ This application is an API developed during TP2-4 and TP5 of the distributed inf
     * <b>Apache Maven<b>
       <br>Please click [here](https://maven.apache.org/) for more informations about Maven.
 
-## TECHNOLOGIES   
+### TECHNOLOGIES   
 ***
  * java 
  * JPA : [here](https://www.baeldung.com/learn-jpa-hibernate) 
@@ -60,7 +60,7 @@ This application is an API developed during TP2-4 and TP5 of the distributed inf
  * Postman : [here](https://www.postman.com/)
 
 
-## INSTALL
+### INSTALL
 ***
 
 Requirements :
@@ -98,7 +98,7 @@ Requirements :
  10. The end. 
 
 
-##GET STARTED
+### GET STARTED
 ***
 This part assumes that you have already followed the previous part. 
 * Run this file :  `src/main/java/fr/istic/sir/Main.java`. Then the API is running on port 8080.
