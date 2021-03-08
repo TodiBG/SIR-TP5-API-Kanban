@@ -11,7 +11,7 @@ TP2-4 et TP5, Systèmes d'information répartis. <br/> <br/>
 2. [Tools](##TOOLS)
 3. [Technologies](##TECHNOLOGIES)
 4. [Install](##INSTALL)
-5. [Get started](## GET STARTED)
+5. [Get started](##GET STARTED)
 
 ### ABOUT
 ***
