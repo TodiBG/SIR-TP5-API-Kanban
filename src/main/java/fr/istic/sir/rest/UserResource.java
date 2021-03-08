@@ -113,8 +113,10 @@ public class UserResource {
   )
   public User update(@PathParam("userEmail") String email, @Parameter(description = "The User to be updated", required = true) User user) {
 
-    if(  user.getEmail().equals(email) ) {
+    if(  user.getEmail().equals(email.trim()) ) {
       new UserDao().update(user);
+    }else {
+      user = null ;
     }
     return user; //Response.ok().entity("SUCCESS").build();
   }

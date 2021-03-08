@@ -1,12 +1,17 @@
 # SIR-TP5-API-Kanban
-TP2-4 et TP5 de Systèmes d'information répartis. <br/> <br/>
+TP2-4 et TP5, Systèmes d'information répartis. <br/> <br/>
 
 ###AUTORS
   * [Bonaventure Gbehe](https://github.com/TodiBG)
-  * [Ange Clarisse Sibomana](https://github.com/angecla)
- 
-
+  * [Ange Sibomana](https://github.com/angecla)
 <br/> 
+    
+##Table of contents
+1. [About](##ABOUT)
+2. [Tools](##TOOLS)
+3. [Technologies](##TECHNOLOGIES)
+4. [Install](##INSTALL)
+5. [Get started](##GET STARTED)
 
 ##ABOUT
 ***
@@ -57,6 +62,13 @@ This application is an API developed during TP2-4 and TP5 of the distributed inf
 
 ## INSTALL
 ***
+
+Requirements :
+- IntelliJ IDEA or Eclipse IDE
+- Apache Maven
+- MySQL
+
+
  1. First you must have [Apache Maven](https://maven.apache.org/) insatalled in your computer.  If you dont have Apache Maven then you can get it [here](https://maven.apache.org/).
    
  
@@ -69,10 +81,10 @@ This application is an API developed during TP2-4 and TP5 of the distributed inf
  4. For the application's well running you must have MySQL installed in your computer. If you dont have MySQL then you can get it  [here](https://www.apachefriends.org/fr/index.html) (xampp). In the following instructions we assume that you have MySQL well installed in your computer.
     
 
- 5. In order not to cause you to change anything in the source code of the application, create a new user named "binomes" for MySQL (or PhpMyAdmin if you use Xammp) and give him "binAB01" as password. Then create a new database named "kanban" for the new user that you newly created and give him all right on this database.
+ 5. In order not to cause you to change anything in the source code of the application, create a new user named `binomes` for MySQL (or PhpMyAdmin if you use Xammp) and give him `binAB01`  as password. Then create a new database named `kanban` for the new user that you newly created and give him all right on this database.
 
     
- 6. To test the application we will help you by populating the database quickly. There is at the root of the project a file named `database.sql`. Import the content of this file in "kanban" database. 
+ 6. To test the application we will help you by populating the database quickly. There is at the root of the project a file named `kanban.sql`. Import the content of this file in `binAB01` database. 
     
 
  7. You could skip steps 5 and 6. You will follow this step only if you didn't steps 5 and 6. So edit this file `src/main/resources/META-INF/persistence.xml`  by changing the database name, username and the user password.  Don't forget to change the line 8 `<property name="hibernate.hbm2ddl.auto" value="update"/>` to  `<property name="hibernate.hbm2ddl.auto" value="create"/>`.
@@ -86,7 +98,7 @@ This application is an API developed during TP2-4 and TP5 of the distributed inf
  10. The end. 
 
 
-## GET STARTED
+##GET STARTED
 ***
 This part assumes that you have already followed the previous part. 
 * Run this file :  `src/main/java/fr/istic/sir/Main.java`. Then the API is running on port 8080.
@@ -94,7 +106,7 @@ This part assumes that you have already followed the previous part.
 
 <br/> <br/> <br/> 
 
-
+***
 * We have reused some code of our teacher from [this repository](https://github.com/barais/tpjpa2020).
 * Thanks [Mr Olivier Barais](https://github.com/barais).  
 

@@ -19,7 +19,7 @@ public class Fiche  implements Serializable {
     private int temps;
     private List<Tag> tags  = new ArrayList<>();
     private String lieu;
-    private String url;
+    private String url = "";
     private String note;
     private Section section ;
 
@@ -81,11 +81,17 @@ public class Fiche  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long getId() {
+        if(this.url.equals("")) {
+            this.url = "http://localhost:8080/fiches/" + id;
+        }
         return id;
     }
 
     public void setId(long id) {
         this.id = id;
+        if(this.url.equals("")) {
+            this.url = "http://localhost:8080/fiches/" + id;
+        }
     }
 
     public String getLibelle() {

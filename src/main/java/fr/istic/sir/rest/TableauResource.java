@@ -138,6 +138,8 @@ public class TableauResource {
   public Tableau update(@PathParam("tableauId")long tableauId,  @Parameter(description = "The Tableau to be updated", required = true) Tableau tableau) {
     if(tableau.getId() == tableauId) {
       new TableauDao().update(tableau);
+    }else {
+      tableau = null ;
     }
     return tableau;
   }

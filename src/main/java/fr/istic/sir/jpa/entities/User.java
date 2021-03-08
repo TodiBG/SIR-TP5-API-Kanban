@@ -17,9 +17,9 @@ public class User implements Serializable {
     protected User() {  }
 
     public User(String prenom, String nom , String email) {
-        this.prenom = prenom;
-        this.nom = nom;
-        this.email = email ;
+        this.prenom = prenom.trim();
+        this.nom = nom.trim();
+        this.email = email.trim().toLowerCase() ;
     }
 
     @Id
@@ -29,7 +29,7 @@ public class User implements Serializable {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = email.trim().toLowerCase();
     }
 
     @Column(nullable = false)
@@ -38,12 +38,12 @@ public class User implements Serializable {
     }
 
     public void setPrenom(String prenom) {
-        this.prenom = prenom;
+        this.prenom = prenom.trim();
     }
 
     @Column(nullable = false)
     public String getNom() {
-        return nom;
+        return nom.trim();
     }
 
     public void setNom(String nom) {

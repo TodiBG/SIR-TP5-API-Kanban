@@ -110,9 +110,13 @@ public class SectionResource {
                                   schema = @Schema(implementation = Section.class))
                   )}
   )
-  public Section update(@PathParam("ficheId")long sectionId , @Parameter(description = "The Section to be updated", required = true) Section section) {
+  public Section update(@PathParam("sectionId")long sectionId , @Parameter(description = "The Section to be updated", required = true) Section section) {
     if( section.getId() == sectionId ) {
       new SectionDao().update(section) ;
+
+      System.out.println("ok");
+    }else {
+      section = null ;
     }
     return section;
   }

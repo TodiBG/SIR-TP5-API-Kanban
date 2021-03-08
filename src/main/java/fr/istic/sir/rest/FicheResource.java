@@ -124,6 +124,8 @@ public class FicheResource {
       FicheDao ficheDao = new FicheDao();
 
       ficheDao.update(fiche);
+    }else {
+      fiche = null ;
     }
     return fiche;
   }

@@ -110,6 +110,8 @@ public class TagResource {
   public Tag update(@PathParam("tagId")long tagId ,  @Parameter(description = "The Tag to be updated", required = true) Tag tag) {
    if( tag.getId() == tagId) {
      new TagDao().update(tag);
+   }else {
+     tag = null ;
    }
     return tag;
   }
