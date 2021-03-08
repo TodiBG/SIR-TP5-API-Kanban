@@ -60,7 +60,6 @@ public class SectionResource {
   @Produces({"application/json"})
   @Operation(
           summary = "To retrieve all the Fiches of the Section which Id is passed in path parameter",
-          //description = " Passe the Section's Id in path parameter",
           responses = {
                   @ApiResponse(description = "The response contains all Fiche contained in the Section which Id is passed in path parameter",
                           content = @Content(
@@ -104,7 +103,6 @@ public class SectionResource {
   @Consumes("application/json")
   @Operation(
           summary = "To update the Section which Id is passed in path parameter",
-          //description = " Passe the Section'Id in path parameter",
           responses = {
                   @ApiResponse(description = "The response contains the updated Section, the updated version",
                           content = @Content(

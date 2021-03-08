@@ -1,6 +1,7 @@
 package fr.istic.sir.rest;
 
 
+import fr.istic.sir.jpa.dao.FicheDao;
 import fr.istic.sir.jpa.dao.TableauDao;
 import fr.istic.sir.jpa.entities.Fiche;
 import fr.istic.sir.jpa.entities.Section;
@@ -78,6 +79,29 @@ public class TableauResource {
 
     return new ArrayList<Fiche>() ;
   }
+
+
+  @GET
+  @Path("/{tableauId}/{sectionId}/fiches")
+  @Produces({"application/json"})
+  @Operation(
+          summary = "To retrieve all the Fiches of the Tableau which Id is passed in path parameter and by the section which Id is passed in path parameter",
+          responses = {
+                  @ApiResponse(description = "The response contains all Fiche contained in the Tableau which Id is passed in path parameter and by the section which Id is passed in path parameter",
+                          content = @Content(
+                                  mediaType = "application/json",
+                                  array = @ArraySchema(schema = @Schema(implementation = Fiche.class))
+                          )
+                  )}
+  )
+  public List<Fiche> getFicheCollectionBySection(@PathParam("tableauId") long tableauId, @PathParam("sectionId") long sectionId)  {
+
+    List<Fiche>  list = new FicheDao().findByTabAndSection(tableauId,sectionId);
+
+    return list ;
+  }
+
+
 
 
   @POST
