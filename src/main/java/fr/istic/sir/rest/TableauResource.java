@@ -18,7 +18,7 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("/tableaux")
+@Path("/kanban-api/tableaux")
 @Produces({"application/json"})
 public class TableauResource {
   

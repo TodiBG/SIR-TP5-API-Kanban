@@ -16,7 +16,7 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("/fiches")
+@Path("kanban-api/fiches")
 @Produces({"application/json"})
 public class FicheResource {
   

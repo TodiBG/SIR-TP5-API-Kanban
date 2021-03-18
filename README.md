@@ -53,7 +53,7 @@ This application is an API developed during TP2-4 and TP5 of the distributed inf
  * java 
  * JPA : [here](https://www.baeldung.com/learn-jpa-hibernate) 
  * Hibernate : [here](https://hibernate.org/)
- * MySQL : [here](https://www.mysql.com/) or , Xampp : [here](https://www.apachefriends.org/fr/index.html)
+ * MySQL : [here](https://www.mysql.com/), or Xampp : [here](https://www.apachefriends.org/fr/index.html)
  * API REST :  [here](https://www.restapitutorial.com/)
  * OpenAPI : [here](https://www.openapis.org/) 
  * Swagger: [here](https://swagger.io/docs/specification/about/)  
@@ -93,7 +93,7 @@ Requirements :
  8. Run this file :  `src/main/java/fr/istic/sir/Main.java`. Then the API is running on port 8080. 
     
 
- 9. Open this URL (`http://localhost:8080/docs/`) in your web browser or click [here](http://localhost:8080/docs/) to see the API's documentation, how to use it.
+ 9. Open this URL (`http://localhost:8080/kanban-api/docs/`) in your web browser or click [here](http://localhost:8080/kanban-api/docs/) to see the API's documentation, how to use it.
 
  10. The end. 
 
@@ -102,7 +102,7 @@ Requirements :
 ***
 This part assumes that you have already followed the previous part. 
 * Run this file :  `src/main/java/fr/istic/sir/Main.java`. Then the API is running on port 8080.
-* Open this URL (`http://localhost:8080/docs/`) in your web browser or click [here](http://localhost:8080/docs/) to see the API's documentation, how to use it.
+* Open this URL (`http://localhost:8080/kanban-api/docs/`) in your web browser or click [here](http://localhost:8080/kanban-api/docs/) to see the API's documentation, how to use it.
 
 <br/> <br/> <br/> 
 

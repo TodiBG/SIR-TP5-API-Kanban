@@ -16,7 +16,7 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("/sections")
+@Path("/kanban-api/sections")
 @Produces({"application/json"})
 public class SectionResource {
   

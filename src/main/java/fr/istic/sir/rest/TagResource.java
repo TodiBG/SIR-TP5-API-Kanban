@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("/tags")
+@Path("/kanban-api/tags")
 @Produces({"application/json"})
 public class TagResource {
   

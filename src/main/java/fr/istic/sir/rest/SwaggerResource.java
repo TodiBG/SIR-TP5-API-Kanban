@@ -15,7 +15,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
-@Path("/docs")
+@Path("/kanban-api/docs")
 public class SwaggerResource {
 
     @GET
